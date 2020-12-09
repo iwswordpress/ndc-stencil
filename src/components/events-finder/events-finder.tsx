@@ -12,6 +12,7 @@ export class EventsFinder {
     symbol: string;
     name: string;
     spaces: string;
+    id: string;
   }[] = [];
   @State() loading = false;
   @Event({ bubbles: true, composed: true })
@@ -29,6 +30,7 @@ export class EventsFinder {
             name: match.event_city,
             symbol: match.event_code,
             spaces: match.event_spaces,
+            id: match.id,
           };
         });
         console.log(this.searchResults);
@@ -40,16 +42,20 @@ export class EventsFinder {
       });
   }
 
-  onSelectSymbol(symbol: string) {
-    this.ucSymbolSelected.emit(symbol);
+  onSelectSymbol(id: string) {
+    console.log("emit: ", id);
+    this.ucSymbolSelected.emit(id);
   }
 
   render() {
     let content = (
       <ul>
         {this.searchResults.map((result) => (
-          <li onClick={this.onSelectSymbol.bind(this, result.symbol)}>
-            <strong>{result.symbol}</strong> - {result.name}: {result.spaces}
+          <li onClick={this.onSelectSymbol.bind(this, result.id)}>
+            <strong>
+              {result.id}: {result.symbol}
+            </strong>{" "}
+            - {result.name}: {result.spaces}
           </li>
         ))}
       </ul>

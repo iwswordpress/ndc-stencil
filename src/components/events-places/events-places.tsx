@@ -8,14 +8,17 @@ import { Component, State, Listen, h } from "@stencil/core";
 export class StockPrice {
   @State() eventSpaces: number = 0;
   @State() eventCode: string;
+  @State() eventId: string;
+
   @State() error: string;
   @State() loading = false;
 
   @Listen("ucSymbolSelected", { target: "body" })
   onStockSymbolSelected(event: CustomEvent) {
     console.log("Event heard: ", event);
-    console.log("conference selected: " + event.detail);
-    this.eventCode = event.detail;
+    console.log("conference id selected: " + event.detail);
+    this.eventId = event.detail;
+
     this.fetchEventSpaces();
   }
 
@@ -44,23 +47,25 @@ export class StockPrice {
 
   fetchEventSpaces() {
     this.loading = true;
-    fetch(`https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/conferences`)
+    //console.log("fetch id: ", this.eventId);
+    const api = `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/get-event?id=${this.eventId}`;
+    //console.log("api: ", api);
+    fetch(api)
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Invalid!");
         }
-        console.log(res);
+        //console.log(res);
         return res.json();
       })
       .then((data) => {
         if (!data) {
           throw new Error("Invalid symbol!");
         }
-        console.log(data);
+        console.log("data ", data);
         this.error = null;
-        this.eventSpaces = data[1].event_spaces;
-        console.log(this.eventSpaces);
-        console.log("paces = ", this.eventSpaces);
+        this.eventSpaces = data[0].event_spaces;
+        this.eventCode = data[0].event_code;
         this.loading = false;
       })
       .catch((err) => {
@@ -79,15 +84,16 @@ export class StockPrice {
       dataContent = <p>{this.error}</p>;
     }
     if (this.eventSpaces) {
-      dataContent = this.eventSpaces;
+      dataContent = (
+        <p>
+          <b>{this.eventId}</b> You are booked at <b>{this.eventCode}</b> which
+          has {this.eventSpaces} places availabe - BOOK?
+        </p>
+      );
     }
     if (this.loading) {
       // dataContent = <uc-spinner></uc-spinner>;
     }
-    return (
-      <div>
-        You are booked at <b>{this.eventCode}</b>: {dataContent}
-      </div>
-    );
+    return <div>{dataContent}</div>;
   }
 }
