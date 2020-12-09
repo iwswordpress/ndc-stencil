@@ -10,10 +10,6 @@ export class AppRoot {
     return (
       <div class="container">
         <div>
-          <header>
-            <h1>STENCIL VERCEL</h1>
-          </header>
-
           <main>
             <stencil-router>
               <stencil-route-switch scrollTopOffset={0}>
