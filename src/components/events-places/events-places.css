@@ -1,0 +1,9 @@
+:host {
+  font-family: sans-serif;
+  border: 2px solid var(--color-primary, black);
+  padding: 1rem;
+  width: 400px;
+  display: block;
+  max-width: 100%;
+  margin-bottom: 5px;
+}

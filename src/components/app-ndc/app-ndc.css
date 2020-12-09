@@ -1,0 +1,10 @@
+.app-profile {
+  padding: 10px;
+}
+.two-card {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
