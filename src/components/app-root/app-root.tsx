@@ -10,7 +10,7 @@ export class AppRoot {
     return (
       <div class="container">
         <header>
-          <h1>NDC</h1>
+          <h1>NDC 2021</h1>
         </header>
         <div>
           <main>
