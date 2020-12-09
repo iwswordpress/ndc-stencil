@@ -26,6 +26,12 @@ export namespace Components {
     interface IwsStockPrice {
         "stockSymbol": string;
     }
+    interface IwsTest {
+        /**
+          * The first name
+         */
+        "app": string;
+    }
     interface IwsWordpress {
     }
     interface UcSpinner {
@@ -80,6 +86,12 @@ declare global {
         prototype: HTMLIwsStockPriceElement;
         new (): HTMLIwsStockPriceElement;
     };
+    interface HTMLIwsTestElement extends Components.IwsTest, HTMLStencilElement {
+    }
+    var HTMLIwsTestElement: {
+        prototype: HTMLIwsTestElement;
+        new (): HTMLIwsTestElement;
+    };
     interface HTMLIwsWordpressElement extends Components.IwsWordpress, HTMLStencilElement {
     }
     var HTMLIwsWordpressElement: {
@@ -101,6 +113,7 @@ declare global {
         "iws-events-places": HTMLIwsEventsPlacesElement;
         "iws-stock-finder": HTMLIwsStockFinderElement;
         "iws-stock-price": HTMLIwsStockPriceElement;
+        "iws-test": HTMLIwsTestElement;
         "iws-wordpress": HTMLIwsWordpressElement;
         "uc-spinner": HTMLUcSpinnerElement;
     }
@@ -127,6 +140,12 @@ declare namespace LocalJSX {
     interface IwsStockPrice {
         "stockSymbol"?: string;
     }
+    interface IwsTest {
+        /**
+          * The first name
+         */
+        "app"?: string;
+    }
     interface IwsWordpress {
         "onIwsPostSelected"?: (event: CustomEvent<string>) => void;
     }
@@ -141,6 +160,7 @@ declare namespace LocalJSX {
         "iws-events-places": IwsEventsPlaces;
         "iws-stock-finder": IwsStockFinder;
         "iws-stock-price": IwsStockPrice;
+        "iws-test": IwsTest;
         "iws-wordpress": IwsWordpress;
         "uc-spinner": UcSpinner;
     }
@@ -157,6 +177,7 @@ declare module "@stencil/core" {
             "iws-events-places": LocalJSX.IwsEventsPlaces & JSXBase.HTMLAttributes<HTMLIwsEventsPlacesElement>;
             "iws-stock-finder": LocalJSX.IwsStockFinder & JSXBase.HTMLAttributes<HTMLIwsStockFinderElement>;
             "iws-stock-price": LocalJSX.IwsStockPrice & JSXBase.HTMLAttributes<HTMLIwsStockPriceElement>;
+            "iws-test": LocalJSX.IwsTest & JSXBase.HTMLAttributes<HTMLIwsTestElement>;
             "iws-wordpress": LocalJSX.IwsWordpress & JSXBase.HTMLAttributes<HTMLIwsWordpressElement>;
             "uc-spinner": LocalJSX.UcSpinner & JSXBase.HTMLAttributes<HTMLUcSpinnerElement>;
         }

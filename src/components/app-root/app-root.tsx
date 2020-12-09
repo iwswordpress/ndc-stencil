@@ -9,6 +9,9 @@ export class AppRoot {
   render() {
     return (
       <div class="container">
+        <header>
+          <h1>NDC</h1>
+        </header>
         <div>
           <main>
             <stencil-router>
