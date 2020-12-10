@@ -24,10 +24,6 @@ export class AppNdc {
 
     return (
       <div>
-        <stencil-route-link url="/stocks">
-          <button>Stocks</button>
-        </stencil-route-link>
-
         <div class="two-card">
           <div>
             <iws-events-finder />

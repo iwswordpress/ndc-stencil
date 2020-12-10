@@ -10,7 +10,13 @@ export class AppRoot {
     return (
       <div class="container">
         <header>
-          <h1>NDC 2021 DEV</h1>
+          <stencil-route-link url="/ndc/conferences">
+            <button>NDC page</button>
+          </stencil-route-link>
+          <h1>ONE STOP TECH CONFERENCES</h1>
+          <stencil-route-link url="/stocks">
+            <button>Stocks</button>
+          </stencil-route-link>
         </header>
         <div>
           <main>
