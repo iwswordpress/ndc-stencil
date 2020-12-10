@@ -23,12 +23,18 @@ export class AppNdc {
     // }
 
     return (
-      <div class="two-card">
-        <div>
-          <iws-events-finder />
-        </div>{" "}
-        <div>
-          <iws-events-places></iws-events-places>
+      <div>
+        <stencil-route-link url="/stocks">
+          <button>Stocks</button>
+        </stencil-route-link>
+
+        <div class="two-card">
+          <div>
+            <iws-events-finder />
+          </div>{" "}
+          <div>
+            <iws-events-places></iws-events-places>
+          </div>{" "}
         </div>
       </div>
     );

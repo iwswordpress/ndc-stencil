@@ -79,16 +79,22 @@ export class StockPrice {
   }
 
   render() {
-    let dataContent = <p>Please enter a symbol!</p>;
+    let dataContent = <h2>TICKETS</h2>;
     if (this.error) {
       dataContent = <p>{this.error}</p>;
     }
     if (this.eventSpaces) {
       dataContent = (
-        <p>
-          <b>{this.eventId}</b> You are booked at <b>{this.eventCode}</b> which
-          has {this.eventSpaces} places availabe - BOOK?
-        </p>
+        <div>
+          <h2>TICKETS</h2>
+          <p>
+            You are booked at{" "}
+            <b>
+              {this.eventCode} (ID: {this.eventId})
+            </b>{" "}
+            which has {this.eventSpaces} attendees already!
+          </p>
+        </div>
       );
     }
     if (this.loading) {

@@ -65,10 +65,14 @@ export class EventsFinder {
     }
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <h3>0.1.6</h3>
-        <p>iwswordpress-ionic npm </p>
-        <input id="stock-symbol" ref={(el) => (this.stockNameInput = el)} />
-        <button type="submit">Find!</button>
+        <h2>TECH CONFERENCES</h2>
+        <p>Please select conference type:</p>
+        <input
+          id="stock-symbol"
+          ref={(el) => (this.stockNameInput = el)}
+          placeholder="NDC"
+        />
+        <button type="submit">Show conferences</button>
       </form>,
       content,
     ];

@@ -1,4 +1,8 @@
 .app-home {
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
 }
 
