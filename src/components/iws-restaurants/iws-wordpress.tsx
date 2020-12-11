@@ -101,8 +101,9 @@ export class GetPosts {
       output = <uc-spinner />;
     }
     return [
+      <h2>CITY PLACES COMPONENT</h2>,
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <button type="submit">Restaurants in {this.id}</button>
+        <button type="submit">Places in {this.id}</button>
       </form>,
       output,
       <div class="output" innerHTML={this.post}></div>,
