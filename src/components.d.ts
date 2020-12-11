@@ -141,7 +141,7 @@ declare namespace LocalJSX {
     interface IwsEventListener {
     }
     interface IwsEventsFinder {
-        "onIwsSymbolSelected"?: (event: CustomEvent<string>) => void;
+        "onIwsConferenceSelected"?: (event: CustomEvent<string>) => void;
     }
     interface IwsEventsPlaces {
     }
@@ -158,7 +158,7 @@ declare namespace LocalJSX {
         "app"?: string;
     }
     interface IwsWordpress {
-        "onIwsPostSelected"?: (event: CustomEvent<string>) => void;
+        "onIwsFlightSelected"?: (event: CustomEvent<string>) => void;
     }
     interface UcSpinner {
     }

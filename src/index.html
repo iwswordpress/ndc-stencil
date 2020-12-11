@@ -41,14 +41,17 @@
       <div><h1>ndc-stencil.vercel.app</h1></div>
       <div style="display: flex; justify-content: space-around; gap: 10px">
         <iws-events-finder></iws-events-finder>
-        <iws-events-places></iws-events-places>
+
+        <div>
+          <iws-events-places></iws-events-places><iws-wordpress></iws-wordpress>
+        </div>
         <iws-event-listener></iws-event-listener>
       </div>
-      <div><iws-wordpress></iws-wordpress></div>
-      <div style="display: flex; gap: 10px">
+
+      <!-- <div style="display: flex; gap: 10px">
         <iws-stock-price stock-symbol="MSFT"></iws-stock-price>
         <iws-stock-finder></iws-stock-finder>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>

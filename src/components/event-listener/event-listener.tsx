@@ -12,24 +12,22 @@ export class EventListener {
   @State() anEvent: string = "default";
   @State() id: number = 0;
 
-  @Listen("iwsSymbolSelected", { target: "body" })
+  @Listen("iwsConferenceSelected", { target: "body" })
   onEventSymbolSelected(event: CustomEvent) {
-    console.log("[EVENT LISTENER] IWS: " + event.detail);
+    console.log("[EVENT LISTENER] iwsConferenceSelected: " + event.detail);
     this.id++;
-    const logOutput = `${this.id}: IWS - ${event.detail}`;
+    const logOutput = `${this.id}: CONFERENCE - ${event.detail}`;
     this.anEvent = logOutput;
-    console.log("this.anEvent: ", this.anEvent);
     this.listOfEvents.push(this.anEvent);
   }
 
-  @Listen("iwsPostSelected", { target: "body" })
+  @Listen("iwsFlightSelected", { target: "body" })
   iwsFlightsSelected(event: CustomEvent) {
     const flight = JSON.parse(event.detail);
-    console.log("[EVENT LISTENER] FL: " + flight.id);
+    console.log("[EVENT LISTENER] iwsFlightSelected: " + flight.id);
     this.id++;
-    const logOutput = `${this.id}: FL - ${flight.id}`;
+    const logOutput = `${this.id}: FLIGHT - ${flight.id}`;
     this.anEvent = logOutput;
-    console.log("this.anEvent: ", this.anEvent);
     this.listOfEvents.push(this.anEvent);
   }
   @Listen("ucSymbolSelected", { target: "body" })

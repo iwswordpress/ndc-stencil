@@ -1,8 +1,8 @@
-import { Component, State, Listen, h } from '@stencil/core';
+import { Component, State, Listen, h } from "@stencil/core";
 
 @Component({
-  tag: 'iws-events-places',
-  styleUrl: './events-places.css',
+  tag: "iws-events-places",
+  styleUrl: "./events-places.css",
   shadow: true,
 })
 export class StockPrice {
@@ -13,9 +13,9 @@ export class StockPrice {
   @State() error: string;
   @State() loading = false;
 
-  @Listen('iwsSymbolSelected', { target: 'body' })
+  @Listen("iwsConferenceSelected", { target: "body" })
   onStockSymbolSelected(event: CustomEvent) {
-    console.log('[EVENTS PLACES] Event heard: ', event.type, 'payload: ',event.detail);
+    console.log("[CART] Event heard: ", event.type, "payload: ", event.detail);
 
     this.eventId = event.detail;
 
@@ -42,7 +42,7 @@ export class StockPrice {
   }
 
   disconnectedCallback() {
-    console.log('disconnectedCallback');
+    //console.log("disconnectedCallback");
   }
 
   fetchEventSpaces() {
@@ -51,31 +51,31 @@ export class StockPrice {
     const api = `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/get-event?id=${this.eventId}`;
     //console.log("api: ", api);
     fetch(api)
-      .then(res => {
+      .then((res) => {
         if (res.status !== 200) {
-          throw new Error('Invalid!');
+          throw new Error("Invalid!");
         }
         //console.log(res);
         return res.json();
       })
-      .then(data => {
+      .then((data) => {
         if (!data) {
-          throw new Error('Invalid symbol!');
+          throw new Error("Invalid symbol!");
         }
-        console.log('data ', data);
+        // console.log("data ", data);
         this.error = null;
         this.eventSpaces = data[0].event_spaces;
         this.eventCode = data[0].event_code;
         this.loading = false;
       })
-      .catch(err => {
+      .catch((err) => {
         this.error = err.message;
         this.loading = false;
       });
   }
 
   hostData() {
-    return { class: this.error ? 'error' : '' };
+    return { class: this.error ? "error" : "" };
   }
 
   render() {
@@ -86,12 +86,12 @@ export class StockPrice {
     if (this.eventSpaces) {
       dataContent = (
         <div>
-          <h2>TICKETS</h2>
+          <h2>BOOKINGS COMPONENT</h2>
           <p>
-            You are booked at{' '}
+            You are booked at{" "}
             <b>
               {this.eventCode} (ID: {this.eventId})
-            </b>{' '}
+            </b>{" "}
             which has {this.eventSpaces} attendees already!
           </p>
         </div>
