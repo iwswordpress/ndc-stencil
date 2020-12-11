@@ -36,6 +36,8 @@ export namespace Components {
          */
         "app": string;
     }
+    interface IwsWordpress {
+    }
     interface UcSpinner {
     }
 }
@@ -106,6 +108,12 @@ declare global {
         prototype: HTMLIwsTestElement;
         new (): HTMLIwsTestElement;
     };
+    interface HTMLIwsWordpressElement extends Components.IwsWordpress, HTMLStencilElement {
+    }
+    var HTMLIwsWordpressElement: {
+        prototype: HTMLIwsWordpressElement;
+        new (): HTMLIwsWordpressElement;
+    };
     interface HTMLUcSpinnerElement extends Components.UcSpinner, HTMLStencilElement {
     }
     var HTMLUcSpinnerElement: {
@@ -124,6 +132,7 @@ declare global {
         "iws-stock-finder": HTMLIwsStockFinderElement;
         "iws-stock-price": HTMLIwsStockPriceElement;
         "iws-test": HTMLIwsTestElement;
+        "iws-wordpress": HTMLIwsWordpressElement;
         "uc-spinner": HTMLUcSpinnerElement;
     }
 }
@@ -160,6 +169,9 @@ declare namespace LocalJSX {
          */
         "app"?: string;
     }
+    interface IwsWordpress {
+        "onIwsPostSelected"?: (event: CustomEvent<string>) => void;
+    }
     interface UcSpinner {
     }
     interface IntrinsicElements {
@@ -174,6 +186,7 @@ declare namespace LocalJSX {
         "iws-stock-finder": IwsStockFinder;
         "iws-stock-price": IwsStockPrice;
         "iws-test": IwsTest;
+        "iws-wordpress": IwsWordpress;
         "uc-spinner": UcSpinner;
     }
 }
@@ -192,6 +205,7 @@ declare module "@stencil/core" {
             "iws-stock-finder": LocalJSX.IwsStockFinder & JSXBase.HTMLAttributes<HTMLIwsStockFinderElement>;
             "iws-stock-price": LocalJSX.IwsStockPrice & JSXBase.HTMLAttributes<HTMLIwsStockPriceElement>;
             "iws-test": LocalJSX.IwsTest & JSXBase.HTMLAttributes<HTMLIwsTestElement>;
+            "iws-wordpress": LocalJSX.IwsWordpress & JSXBase.HTMLAttributes<HTMLIwsWordpressElement>;
             "uc-spinner": LocalJSX.UcSpinner & JSXBase.HTMLAttributes<HTMLUcSpinnerElement>;
         }
     }
