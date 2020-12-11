@@ -50,7 +50,7 @@ export class EventListener {
     );
     return (
       <div class="log">
-        <h2>EVENT LOG</h2>
+        <h2>LOG COMPONENT</h2>
 
         <div>{content}</div>
       </div>
