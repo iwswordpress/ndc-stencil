@@ -15,7 +15,12 @@ import {
 export class GetPosts {
   stockNameInput: HTMLInputElement;
 
-  @State() searchResults: { id: string; city: string; place: string }[] = [];
+  @State() searchResults: {
+    id: string;
+    city: string;
+    place: string;
+    website: string;
+  }[] = [];
   @State() loading = false;
   @State() id: string = "";
   @State() city: string = "";
@@ -60,6 +65,7 @@ export class GetPosts {
             id: post.id,
             city: post.city_code,
             place: post.place,
+            website: post.website,
           };
         });
         console.log(this.searchResults);
@@ -86,7 +92,7 @@ export class GetPosts {
             //   })
             // )}
           >
-            <strong>{result.city}</strong> - {result.place}
+            <strong>{result.city}</strong> - {result.place} - {result.website}
           </li>
         ))}
       </ul>
