@@ -7,11 +7,9 @@ import {
   h,
 } from "@stencil/core";
 
-// import { AV_API_KEY } from "../../global/global";
-
 @Component({
-  tag: "iws-wordpress",
-  styleUrl: "./iws-wordpress.css",
+  tag: "iws-event-flights",
+  styleUrl: "./event-flights.css",
   shadow: true,
 })
 export class GetPosts {

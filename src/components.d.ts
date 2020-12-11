@@ -17,6 +17,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface IwsEventFlights {
+    }
     interface IwsEventListener {
     }
     interface IwsEventsFinder {
@@ -33,8 +35,6 @@ export namespace Components {
           * The first name
          */
         "app": string;
-    }
-    interface IwsWordpress {
     }
     interface UcSpinner {
     }
@@ -63,6 +63,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLIwsEventFlightsElement extends Components.IwsEventFlights, HTMLStencilElement {
+    }
+    var HTMLIwsEventFlightsElement: {
+        prototype: HTMLIwsEventFlightsElement;
+        new (): HTMLIwsEventFlightsElement;
     };
     interface HTMLIwsEventListenerElement extends Components.IwsEventListener, HTMLStencilElement {
     }
@@ -100,12 +106,6 @@ declare global {
         prototype: HTMLIwsTestElement;
         new (): HTMLIwsTestElement;
     };
-    interface HTMLIwsWordpressElement extends Components.IwsWordpress, HTMLStencilElement {
-    }
-    var HTMLIwsWordpressElement: {
-        prototype: HTMLIwsWordpressElement;
-        new (): HTMLIwsWordpressElement;
-    };
     interface HTMLUcSpinnerElement extends Components.UcSpinner, HTMLStencilElement {
     }
     var HTMLUcSpinnerElement: {
@@ -117,13 +117,13 @@ declare global {
         "app-ndc": HTMLAppNdcElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "iws-event-flights": HTMLIwsEventFlightsElement;
         "iws-event-listener": HTMLIwsEventListenerElement;
         "iws-events-finder": HTMLIwsEventsFinderElement;
         "iws-events-places": HTMLIwsEventsPlacesElement;
         "iws-stock-finder": HTMLIwsStockFinderElement;
         "iws-stock-price": HTMLIwsStockPriceElement;
         "iws-test": HTMLIwsTestElement;
-        "iws-wordpress": HTMLIwsWordpressElement;
         "uc-spinner": HTMLUcSpinnerElement;
     }
 }
@@ -137,6 +137,9 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
+    }
+    interface IwsEventFlights {
+        "onIwsFlightSelected"?: (event: CustomEvent<string>) => void;
     }
     interface IwsEventListener {
     }
@@ -157,9 +160,6 @@ declare namespace LocalJSX {
          */
         "app"?: string;
     }
-    interface IwsWordpress {
-        "onIwsFlightSelected"?: (event: CustomEvent<string>) => void;
-    }
     interface UcSpinner {
     }
     interface IntrinsicElements {
@@ -167,13 +167,13 @@ declare namespace LocalJSX {
         "app-ndc": AppNdc;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "iws-event-flights": IwsEventFlights;
         "iws-event-listener": IwsEventListener;
         "iws-events-finder": IwsEventsFinder;
         "iws-events-places": IwsEventsPlaces;
         "iws-stock-finder": IwsStockFinder;
         "iws-stock-price": IwsStockPrice;
         "iws-test": IwsTest;
-        "iws-wordpress": IwsWordpress;
         "uc-spinner": UcSpinner;
     }
 }
@@ -185,13 +185,13 @@ declare module "@stencil/core" {
             "app-ndc": LocalJSX.AppNdc & JSXBase.HTMLAttributes<HTMLAppNdcElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "iws-event-flights": LocalJSX.IwsEventFlights & JSXBase.HTMLAttributes<HTMLIwsEventFlightsElement>;
             "iws-event-listener": LocalJSX.IwsEventListener & JSXBase.HTMLAttributes<HTMLIwsEventListenerElement>;
             "iws-events-finder": LocalJSX.IwsEventsFinder & JSXBase.HTMLAttributes<HTMLIwsEventsFinderElement>;
             "iws-events-places": LocalJSX.IwsEventsPlaces & JSXBase.HTMLAttributes<HTMLIwsEventsPlacesElement>;
             "iws-stock-finder": LocalJSX.IwsStockFinder & JSXBase.HTMLAttributes<HTMLIwsStockFinderElement>;
             "iws-stock-price": LocalJSX.IwsStockPrice & JSXBase.HTMLAttributes<HTMLIwsStockPriceElement>;
             "iws-test": LocalJSX.IwsTest & JSXBase.HTMLAttributes<HTMLIwsTestElement>;
-            "iws-wordpress": LocalJSX.IwsWordpress & JSXBase.HTMLAttributes<HTMLIwsWordpressElement>;
             "uc-spinner": LocalJSX.UcSpinner & JSXBase.HTMLAttributes<HTMLUcSpinnerElement>;
         }
     }
