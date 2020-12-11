@@ -17,6 +17,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface IwsEventListener {
+    }
     interface IwsEventsFinder {
     }
     interface IwsEventsPlaces {
@@ -61,6 +63,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLIwsEventListenerElement extends Components.IwsEventListener, HTMLStencilElement {
+    }
+    var HTMLIwsEventListenerElement: {
+        prototype: HTMLIwsEventListenerElement;
+        new (): HTMLIwsEventListenerElement;
     };
     interface HTMLIwsEventsFinderElement extends Components.IwsEventsFinder, HTMLStencilElement {
     }
@@ -109,6 +117,7 @@ declare global {
         "app-ndc": HTMLAppNdcElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "iws-event-listener": HTMLIwsEventListenerElement;
         "iws-events-finder": HTMLIwsEventsFinderElement;
         "iws-events-places": HTMLIwsEventsPlacesElement;
         "iws-stock-finder": HTMLIwsStockFinderElement;
@@ -129,8 +138,10 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface IwsEventListener {
+    }
     interface IwsEventsFinder {
-        "onUcSymbolSelected"?: (event: CustomEvent<string>) => void;
+        "onIwsSymbolSelected"?: (event: CustomEvent<string>) => void;
     }
     interface IwsEventsPlaces {
     }
@@ -156,6 +167,7 @@ declare namespace LocalJSX {
         "app-ndc": AppNdc;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "iws-event-listener": IwsEventListener;
         "iws-events-finder": IwsEventsFinder;
         "iws-events-places": IwsEventsPlaces;
         "iws-stock-finder": IwsStockFinder;
@@ -173,6 +185,7 @@ declare module "@stencil/core" {
             "app-ndc": LocalJSX.AppNdc & JSXBase.HTMLAttributes<HTMLAppNdcElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "iws-event-listener": LocalJSX.IwsEventListener & JSXBase.HTMLAttributes<HTMLIwsEventListenerElement>;
             "iws-events-finder": LocalJSX.IwsEventsFinder & JSXBase.HTMLAttributes<HTMLIwsEventsFinderElement>;
             "iws-events-places": LocalJSX.IwsEventsPlaces & JSXBase.HTMLAttributes<HTMLIwsEventsPlacesElement>;
             "iws-stock-finder": LocalJSX.IwsStockFinder & JSXBase.HTMLAttributes<HTMLIwsStockFinderElement>;

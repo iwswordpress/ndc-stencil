@@ -24,13 +24,34 @@
     <link rel="manifest" href="/manifest.json" />
     <style>
       html {
-        --color-primary: #2196f3;
-        --color-primary-inverse: white;
+        --color-primary: red;
         --color-primary-highlight: orange;
+      }
+      .container {
+        max-width: 1000px;
+        border: 10px solid black;
+        border-radius: 10px;
+        margin: 0 auto;
+        padding: 20px;
       }
     </style>
   </head>
   <body>
-    <app-root></app-root>
+    <div class="container">
+      <my-component
+        first="Stencil"
+        last="'Don't call me a framework' JS"
+      ></my-component>
+      <div style="display: flex; justify-content: space-around; gap: 10px">
+        <iws-events-finder></iws-events-finder>
+        <iws-events-places></iws-events-places>
+        <iws-event-listener></iws-event-listener>
+      </div>
+      <div><iws-wordpress></iws-wordpress></div>
+      <div style="display: flex; gap: 10px">
+        <iws-stock-price stock-symbol="MSFT"></iws-stock-price>
+        <iws-stock-finder></iws-stock-finder>
+      </div>
+    </div>
   </body>
 </html>
