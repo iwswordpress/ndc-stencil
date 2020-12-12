@@ -2,7 +2,7 @@
   font-family: sans-serif;
   border: 4px solid green;
   padding: 1rem;
-  width: 400px;
+  width: 100%;
   display: block;
   max-width: 100%;
   margin-bottom: 5px;
@@ -24,16 +24,15 @@ form button:focus {
 form button {
   font: inherit;
   padding: 0.25rem 0.5rem;
-  border: 1px solid var(--color-primary, black);
-  background: var(--color-primary, black);
+  border: 1px solid green;
+  background: green;
   color: white;
   cursor: pointer;
 }
 
-form button:hover,
-form button:active {
-  background: var(--color-primary-highlight, black);
-  border-color: var(--color-primary-highlight, black);
+form button:hover {
+  background: rgb(29, 177, 29);
+  border-color: rgb(29, 177, 29);
 }
 
 form button:disabled {
@@ -47,10 +46,11 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: 12px;
 }
 
 li {
-  margin: 0.25rem 0;
+  margin: 0.15rem 0;
   padding: 0.25rem;
   border: 1px solid #ccc;
   cursor: pointer;
@@ -58,6 +58,6 @@ li {
 
 li:hover,
 li:active {
-  background: var(--color-primary, black);
+  background: green;
   color: white;
 }

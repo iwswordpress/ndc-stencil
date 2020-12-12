@@ -10,7 +10,7 @@ export class EventsFinder {
 
   @State() searchResults: {
     symbol: string;
-    name: string;
+    city: string;
     spaces: string;
     id: string;
   }[] = [];
@@ -22,13 +22,13 @@ export class EventsFinder {
   onFindStocks(event: Event) {
     event.preventDefault();
     this.loading = true;
-    // const stockName = this.stockNameInput.value;
+    // const stockcity = this.stockcityInput.value;
     fetch(`https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/conferences`)
       .then((res) => res.json())
       .then((data) => {
         this.searchResults = data.map((match) => {
           return {
-            name: match.event_city,
+            city: match.event_city,
             symbol: match.event_code,
             spaces: match.event_spaces,
             id: match.id,
@@ -43,20 +43,20 @@ export class EventsFinder {
       });
   }
 
-  onSelectSymbol(id: string) {
-    //console.log("emit: ", id);
-    this.iwsConferenceSelected.emit(id);
+  onSelectSymbol(payload: string) {
+    console.log("emit: ", payload);
+    this.iwsConferenceSelected.emit(payload);
   }
 
   render() {
     let content = (
       <ul>
         {this.searchResults.map((result) => (
-          <li onClick={this.onSelectSymbol.bind(this, result.id)}>
+          <li onClick={this.onSelectSymbol.bind(this, JSON.stringify(result))}>
             <strong>
               {result.id}: {result.symbol}
             </strong>{" "}
-            - {result.name}: {result.spaces}
+            - {result.city}: {result.spaces}
           </li>
         ))}
       </ul>
@@ -66,8 +66,8 @@ export class EventsFinder {
     }
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <h2>CONFERENCES COMPONENT</h2>
-        <p>Please select conference type:</p>
+        <h4>EVENTS COMPONENT</h4>
+
         <input
           id="stock-symbol"
           ref={(el) => (this.stockNameInput = el)}

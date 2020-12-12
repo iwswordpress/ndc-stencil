@@ -170,7 +170,6 @@ declare namespace LocalJSX {
         "app"?: string;
     }
     interface IwsWordpress {
-        "onIwsPostSelected"?: (event: CustomEvent<string>) => void;
     }
     interface UcSpinner {
     }

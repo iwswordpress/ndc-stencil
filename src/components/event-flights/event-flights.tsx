@@ -124,7 +124,7 @@ export class GetPosts {
       // <form onSubmit={this.handleGetFlights.bind(this)}>
       //   <button type="submit">Want a flight to {this.id}</button>
       // </form>,
-      <h2>FLIGHTS COMPONENT</h2>,
+      <h4>FLIGHTS COMPONENT</h4>,
       output,
       // <div class="output" innerHTML={this.post}></div>,
     ];

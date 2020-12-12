@@ -16,8 +16,8 @@ export class StockPrice {
   @Listen("iwsConferenceSelected", { target: "body" })
   onStockSymbolSelected(event: CustomEvent) {
     console.log("[CART] Event heard: ", event.type, "payload: ", event.detail);
-
-    this.eventId = event.detail;
+    const json = JSON.parse(event.detail);
+    this.eventId = json.id;
 
     this.fetchEventSpaces();
   }
@@ -79,7 +79,7 @@ export class StockPrice {
   }
 
   render() {
-    let dataContent = <h2>TICKETS</h2>;
+    let dataContent = <h4>BOOKING COMPONENT</h4>;
     if (this.error) {
       dataContent = <p>{this.error}</p>;
     }
