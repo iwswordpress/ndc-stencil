@@ -21,20 +21,9 @@ export namespace Components {
     }
     interface IwsEventListener {
     }
+    interface IwsEventsBooking {
+    }
     interface IwsEventsFinder {
-    }
-    interface IwsEventsPlaces {
-    }
-    interface IwsStockFinder {
-    }
-    interface IwsStockPrice {
-        "stockSymbol": string;
-    }
-    interface IwsTest {
-        /**
-          * The first name
-         */
-        "app": string;
     }
     interface IwsWordpress {
     }
@@ -78,35 +67,17 @@ declare global {
         prototype: HTMLIwsEventListenerElement;
         new (): HTMLIwsEventListenerElement;
     };
+    interface HTMLIwsEventsBookingElement extends Components.IwsEventsBooking, HTMLStencilElement {
+    }
+    var HTMLIwsEventsBookingElement: {
+        prototype: HTMLIwsEventsBookingElement;
+        new (): HTMLIwsEventsBookingElement;
+    };
     interface HTMLIwsEventsFinderElement extends Components.IwsEventsFinder, HTMLStencilElement {
     }
     var HTMLIwsEventsFinderElement: {
         prototype: HTMLIwsEventsFinderElement;
         new (): HTMLIwsEventsFinderElement;
-    };
-    interface HTMLIwsEventsPlacesElement extends Components.IwsEventsPlaces, HTMLStencilElement {
-    }
-    var HTMLIwsEventsPlacesElement: {
-        prototype: HTMLIwsEventsPlacesElement;
-        new (): HTMLIwsEventsPlacesElement;
-    };
-    interface HTMLIwsStockFinderElement extends Components.IwsStockFinder, HTMLStencilElement {
-    }
-    var HTMLIwsStockFinderElement: {
-        prototype: HTMLIwsStockFinderElement;
-        new (): HTMLIwsStockFinderElement;
-    };
-    interface HTMLIwsStockPriceElement extends Components.IwsStockPrice, HTMLStencilElement {
-    }
-    var HTMLIwsStockPriceElement: {
-        prototype: HTMLIwsStockPriceElement;
-        new (): HTMLIwsStockPriceElement;
-    };
-    interface HTMLIwsTestElement extends Components.IwsTest, HTMLStencilElement {
-    }
-    var HTMLIwsTestElement: {
-        prototype: HTMLIwsTestElement;
-        new (): HTMLIwsTestElement;
     };
     interface HTMLIwsWordpressElement extends Components.IwsWordpress, HTMLStencilElement {
     }
@@ -127,11 +98,8 @@ declare global {
         "app-root": HTMLAppRootElement;
         "iws-event-flights": HTMLIwsEventFlightsElement;
         "iws-event-listener": HTMLIwsEventListenerElement;
+        "iws-events-booking": HTMLIwsEventsBookingElement;
         "iws-events-finder": HTMLIwsEventsFinderElement;
-        "iws-events-places": HTMLIwsEventsPlacesElement;
-        "iws-stock-finder": HTMLIwsStockFinderElement;
-        "iws-stock-price": HTMLIwsStockPriceElement;
-        "iws-test": HTMLIwsTestElement;
         "iws-wordpress": HTMLIwsWordpressElement;
         "uc-spinner": HTMLUcSpinnerElement;
     }
@@ -152,22 +120,10 @@ declare namespace LocalJSX {
     }
     interface IwsEventListener {
     }
+    interface IwsEventsBooking {
+    }
     interface IwsEventsFinder {
         "onIwsConferenceSelected"?: (event: CustomEvent<string>) => void;
-    }
-    interface IwsEventsPlaces {
-    }
-    interface IwsStockFinder {
-        "onUcSymbolSelected"?: (event: CustomEvent<string>) => void;
-    }
-    interface IwsStockPrice {
-        "stockSymbol"?: string;
-    }
-    interface IwsTest {
-        /**
-          * The first name
-         */
-        "app"?: string;
     }
     interface IwsWordpress {
     }
@@ -180,11 +136,8 @@ declare namespace LocalJSX {
         "app-root": AppRoot;
         "iws-event-flights": IwsEventFlights;
         "iws-event-listener": IwsEventListener;
+        "iws-events-booking": IwsEventsBooking;
         "iws-events-finder": IwsEventsFinder;
-        "iws-events-places": IwsEventsPlaces;
-        "iws-stock-finder": IwsStockFinder;
-        "iws-stock-price": IwsStockPrice;
-        "iws-test": IwsTest;
         "iws-wordpress": IwsWordpress;
         "uc-spinner": UcSpinner;
     }
@@ -199,11 +152,8 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "iws-event-flights": LocalJSX.IwsEventFlights & JSXBase.HTMLAttributes<HTMLIwsEventFlightsElement>;
             "iws-event-listener": LocalJSX.IwsEventListener & JSXBase.HTMLAttributes<HTMLIwsEventListenerElement>;
+            "iws-events-booking": LocalJSX.IwsEventsBooking & JSXBase.HTMLAttributes<HTMLIwsEventsBookingElement>;
             "iws-events-finder": LocalJSX.IwsEventsFinder & JSXBase.HTMLAttributes<HTMLIwsEventsFinderElement>;
-            "iws-events-places": LocalJSX.IwsEventsPlaces & JSXBase.HTMLAttributes<HTMLIwsEventsPlacesElement>;
-            "iws-stock-finder": LocalJSX.IwsStockFinder & JSXBase.HTMLAttributes<HTMLIwsStockFinderElement>;
-            "iws-stock-price": LocalJSX.IwsStockPrice & JSXBase.HTMLAttributes<HTMLIwsStockPriceElement>;
-            "iws-test": LocalJSX.IwsTest & JSXBase.HTMLAttributes<HTMLIwsTestElement>;
             "iws-wordpress": LocalJSX.IwsWordpress & JSXBase.HTMLAttributes<HTMLIwsWordpressElement>;
             "uc-spinner": LocalJSX.UcSpinner & JSXBase.HTMLAttributes<HTMLUcSpinnerElement>;
         }

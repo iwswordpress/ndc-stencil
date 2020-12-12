@@ -17,7 +17,7 @@ export class EventListener {
     console.log("[EVENT LISTENER] iwsConferenceSelected: " + event.detail);
     this.id++;
     const logOutput = `${this.id}: CONFERENCE - ${event.detail}`;
-    this.anEvent = logOutput;
+    this.anEvent = logOutput; //causes rerender
     this.listOfEvents.push(this.anEvent);
   }
 
@@ -30,15 +30,7 @@ export class EventListener {
     this.anEvent = logOutput;
     this.listOfEvents.push(this.anEvent);
   }
-  @Listen("ucSymbolSelected", { target: "body" })
-  onStockSymbolSelected(event: CustomEvent) {
-    console.log("[EVENT LISTENER] UC: " + event.detail);
-    this.id++;
-    const logOutput = `${this.id}: UC - ${event.detail}`;
-    this.anEvent = logOutput;
-    console.log("this.anEvent: ", this.anEvent);
-    this.listOfEvents.push(this.anEvent);
-  }
+
   render() {
     // let dataContent = <p>Please enter a symbol!</p>;
     let content = (

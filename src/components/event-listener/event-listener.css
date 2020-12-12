@@ -24,6 +24,6 @@ li {
 
 li:hover,
 li:active {
-  background: var(--color-primary, black);
+  background: #2196f3;
   color: white;
 }

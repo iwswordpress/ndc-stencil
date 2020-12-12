@@ -1,11 +1,11 @@
 import { Component, State, Listen, h } from "@stencil/core";
 
 @Component({
-  tag: "iws-events-places",
-  styleUrl: "./events-places.css",
+  tag: "iws-events-booking",
+  styleUrl: "./events-booking.css",
   shadow: true,
 })
-export class StockPrice {
+export class EventsBooking {
   @State() eventSpaces: number = 0;
   @State() eventCode: string;
   @State() eventId: string;
@@ -18,31 +18,7 @@ export class StockPrice {
     console.log("[CART] Event heard: ", event.type, "payload: ", event.detail);
     const json = JSON.parse(event.detail);
     this.eventId = json.id;
-
     this.fetchEventSpaces();
-  }
-
-  componentWillLoad() {
-    //console.log('componentWillLoad');
-    //console.log(this.stockSymbol);
-  }
-
-  componentDidLoad() {}
-
-  componentWillUpdate() {
-    //console.log('componentWillUpdate');
-  }
-
-  componentDidUpdate() {
-    //console.log('componentDidUpdate');
-    // if (this.stockSymbol !== this.initialStockSymbol) {
-    //   this.initialStockSymbol = this.stockSymbol;
-    //   this.fetchStockPrice(this.stockSymbol);
-    // }
-  }
-
-  disconnectedCallback() {
-    //console.log("disconnectedCallback");
   }
 
   fetchEventSpaces() {
