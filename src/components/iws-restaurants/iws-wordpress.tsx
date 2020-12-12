@@ -38,15 +38,20 @@ export class GetPosts {
     this.payload = JSON.parse(event.detail);
     this.city = this.payload.city;
     this.code = this.payload.symbol.substring(0, 3);
-
+    // rerun list now that code has changed
+    this.doFetch(this.code);
     this.btnPlaces.style.display = "block";
   }
-  onFindStocks(event: Event) {
+
+  // this runs when button cleikded to show places
+  onFindPlaces(event: Event) {
     event.preventDefault();
     this.loading = true;
-
+    this.doFetch(this.code);
+  }
+  doFetch(code: string) {
     fetch(
-      `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/places-by-code?code=${this.code}`
+      `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/places-by-code?code=${code}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -67,7 +72,6 @@ export class GetPosts {
         this.loading = false;
       });
   }
-
   render() {
     let output = (
       <ul>
@@ -83,7 +87,7 @@ export class GetPosts {
     }
     return [
       <h4>PLACES COMPONENT</h4>,
-      <form onSubmit={this.onFindStocks.bind(this)}>
+      <form onSubmit={this.onFindPlaces.bind(this)}>
         <button
           id="placesBtn"
           type="submit"

@@ -15,9 +15,15 @@ import {
 export class GetPosts {
   stockNameInput: HTMLInputElement;
 
-  @State() searchResults: { id: string; title: string; content: string }[] = [];
+  @State() searchResults: {
+    id: string;
+    city: string;
+    flight_code: string;
+    flight_time: string;
+  }[] = [];
   @State() loading = false;
   @State() id: string = "";
+  @State() code: string = "OSL";
   @State() post = "Output goes here...";
 
   @Event({ bubbles: true, composed: true })
@@ -25,58 +31,35 @@ export class GetPosts {
 
   @Listen("iwsConferenceSelected", { target: "body" })
   onEvent(event: CustomEvent) {
+    console.log("-----------------");
     console.log(
       "[FLIGHTS] Event heard: ",
       event.type,
       "payload: ",
       event.detail
     );
+    console.log("-----------------");
+    const payload = JSON.parse(event.detail);
+    this.code = payload.symbol.substring(0, 3);
 
-    this.id = event.detail;
     this.getFlights();
   }
-  // handleGetFlights(event: Event) {
-  //   event.preventDefault();
-  //   this.loading = true;
-  //   // const stockName = this.stockNameInput.value;
-  //   //const url = `https://49plus.co.uk/udemy-rest/wp-json/wp/v2/posts`;
-  //   const url = `https://wpjs.co.uk/enterprise/wp-json/wp/v2/posts?categories=73`;
-
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       this.searchResults = data.map((post) => {
-  //         return {
-  //           id: post.id,
-  //           title: post.title.rendered,
-  //           content: post.content.rendered,
-  //         };
-  //       });
-  //       console.log(this.searchResults);
-  //       this.loading = false;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       this.loading = false;
-  //     });
-  // }
-
   getFlights() {
     this.loading = true;
     // const stockName = this.stockNameInput.value;
     //const url = `https://49plus.co.uk/udemy-rest/wp-json/wp/v2/posts`;
-    const url = `https://wpjs.co.uk/enterprise/wp-json/wp/v2/posts?categories=73`;
+    const url = `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/get-flights?code=${this.code}`;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        this.searchResults = data.map((post) => {
+        this.searchResults = data.map((flight) => {
           return {
-            id: post.id,
-            title: post.title.rendered,
-            content: post.content.rendered,
+            id: flight.id,
+            city: flight.city,
+            flight_code: flight.flight_code,
+            flight_time: flight.flight_time,
           };
         });
         //console.log(this.searchResults);
@@ -103,16 +86,17 @@ export class GetPosts {
               this,
               JSON.stringify({
                 id: result.id,
-                title: result.title,
-                content: result.content,
+                city: result.city,
+                flight_code: result.flight_code,
+                flight_time: result.flight_time,
               })
             )}
           >
             <strong>
-              {result.id}: {result.title}
+              {result.flight_code}: {result.flight_time.substring(0, 5)}
             </strong>
             <br></br>
-            The flight details are...
+            {result.city}
           </li>
         ))}
       </ul>
