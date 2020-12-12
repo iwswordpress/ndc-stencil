@@ -42,7 +42,7 @@ export class EventListener {
     );
     return (
       <div class="log">
-        <h2>LOG COMPONENT</h2>
+        <h2>EVENT BUS COMPONENT</h2>
 
         <div>{content}</div>
       </div>

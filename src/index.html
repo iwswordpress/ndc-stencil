@@ -32,13 +32,28 @@
         border: 10px solid black;
         border-radius: 10px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
+    <br />
     <div class="container">
-      <div><h1>ndc-stencil.vercel.app</h1></div>
+      <div style="font-size: 18px">
+        <h3>ndc-stencil.vercel.app</h3>
+        <p>
+          Once a conference is selected, the conference component emits a Custom
+          Event.
+        </p>
+        <p>
+          In this model, the Booking, Flights and Places components listend and
+          respond.
+        </p>
+        <p>
+          The Event Bus component listens for all events and logs them. It can
+          be the CONTROLLER but in this example it is not.
+        </p>
+      </div>
       <div style="display: flex; justify-content: space-around; gap: 10px">
         <iws-events-finder></iws-events-finder>
         <iws-events-booking></iws-events-booking>
