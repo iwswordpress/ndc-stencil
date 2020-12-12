@@ -26,7 +26,7 @@ export class EventListener {
     const flight = JSON.parse(event.detail);
     console.log("[EVENT LISTENER] iwsFlightSelected: " + flight.id);
     this.id++;
-    const logOutput = `${this.id}: FLIGHT - ${flight.id}`;
+    const logOutput = `${this.id}: FLIGHT - ${event.detail}`;
     this.anEvent = logOutput;
     this.listOfEvents.push(this.anEvent);
   }
