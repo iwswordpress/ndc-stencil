@@ -66,7 +66,7 @@ export class EventsFinder {
     }
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <h4>EVENTS COMPONENT</h4>
+        <h4>CONF COMPONENT</h4>
 
         <input
           id="stock-symbol"
