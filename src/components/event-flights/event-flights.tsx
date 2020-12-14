@@ -15,7 +15,7 @@ import {
 })
 export class GetPosts {
   stockNameInput: HTMLInputElement;
-  @Prop() config: string;
+  @Prop({ mutable: true, reflect: true }) config: string;
   @State() searchResults: {
     id: string;
     city: string;

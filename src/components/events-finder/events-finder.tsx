@@ -7,7 +7,7 @@ import { Component, State, Event, EventEmitter, h, Prop } from "@stencil/core";
 })
 export class EventsFinder {
   stockNameInput: HTMLInputElement;
-  @Prop() config: string;
+  @Prop({ mutable: true, reflect: true }) config: string;
   @State() searchResults: {
     symbol: string;
     city: string;
@@ -67,7 +67,7 @@ export class EventsFinder {
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
         <h4>CONF COMPONENT</h4>
-        <p>{this.config}</p>
+        <p>config: {this.config}</p>
 
         <input
           id="stock-symbol"

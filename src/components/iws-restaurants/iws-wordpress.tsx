@@ -7,7 +7,7 @@ import { Component, State, Listen, h, Prop } from "@stencil/core";
 })
 export class GetPosts {
   btnPlaces: HTMLInputElement;
-  @Prop() config: string;
+  @Prop({ mutable: true, reflect: true }) config: string;
   @State() searchResults: {
     id: string;
     city: string;
