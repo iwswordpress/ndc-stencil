@@ -5,6 +5,7 @@ import {
   EventEmitter,
   Listen,
   h,
+  Prop,
 } from "@stencil/core";
 
 @Component({
@@ -14,7 +15,7 @@ import {
 })
 export class GetPosts {
   stockNameInput: HTMLInputElement;
-
+  @Prop() config: string;
   @State() searchResults: {
     id: string;
     city: string;
@@ -109,6 +110,7 @@ export class GetPosts {
       //   <button type="submit">Want a flight to {this.id}</button>
       // </form>,
       <h4>FLIGHTS COMPONENT</h4>,
+      <p>config: {this.config}</p>,
       output,
       // <div class="output" innerHTML={this.post}></div>,
     ];

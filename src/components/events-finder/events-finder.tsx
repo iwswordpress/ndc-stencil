@@ -1,4 +1,4 @@
-import { Component, State, Event, EventEmitter, h } from "@stencil/core";
+import { Component, State, Event, EventEmitter, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "iws-events-finder",
@@ -7,7 +7,7 @@ import { Component, State, Event, EventEmitter, h } from "@stencil/core";
 })
 export class EventsFinder {
   stockNameInput: HTMLInputElement;
-
+  @Prop() config: string;
   @State() searchResults: {
     symbol: string;
     city: string;
@@ -67,6 +67,7 @@ export class EventsFinder {
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
         <h4>CONF COMPONENT</h4>
+        <p>{this.config}</p>
 
         <input
           id="stock-symbol"

@@ -18,14 +18,18 @@ export namespace Components {
     interface AppRoot {
     }
     interface IwsEventFlights {
+        "config": string;
     }
     interface IwsEventListener {
     }
     interface IwsEventsBooking {
+        "config": string;
     }
     interface IwsEventsFinder {
+        "config": string;
     }
     interface IwsWordpress {
+        "config": string;
     }
     interface UcSpinner {
     }
@@ -116,16 +120,20 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface IwsEventFlights {
+        "config"?: string;
         "onIwsFlightSelected"?: (event: CustomEvent<string>) => void;
     }
     interface IwsEventListener {
     }
     interface IwsEventsBooking {
+        "config"?: string;
     }
     interface IwsEventsFinder {
+        "config"?: string;
         "onIwsConferenceSelected"?: (event: CustomEvent<string>) => void;
     }
     interface IwsWordpress {
+        "config"?: string;
     }
     interface UcSpinner {
     }

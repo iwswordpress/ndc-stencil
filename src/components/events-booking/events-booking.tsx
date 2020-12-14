@@ -1,4 +1,4 @@
-import { Component, State, Listen, h } from "@stencil/core";
+import { Component, State, Listen, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "iws-events-booking",
@@ -6,6 +6,7 @@ import { Component, State, Listen, h } from "@stencil/core";
   shadow: true,
 })
 export class EventsBooking {
+  @Prop() config: string;
   @State() eventSpaces: number = 0;
   @State() eventCode: string;
   @State() eventId: string;
@@ -55,7 +56,10 @@ export class EventsBooking {
   }
 
   render() {
-    let dataContent = <h4>BOOKING COMPONENT</h4>;
+    let dataContent = [
+      <h4>BOOKING COMPONENT</h4>,
+      <p>config: {this.config}</p>,
+    ];
     if (this.error) {
       dataContent = <p>{this.error}</p>;
     }
@@ -63,6 +67,7 @@ export class EventsBooking {
       dataContent = (
         <div>
           <h2>BOOKINGS COMPONENT</h2>
+          <p>Config: {this.config}</p>
           <p>
             You are booked at{" "}
             <b>

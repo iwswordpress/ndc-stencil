@@ -1,4 +1,4 @@
-import { Component, State, Listen, h } from "@stencil/core";
+import { Component, State, Listen, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "iws-wordpress",
@@ -7,7 +7,7 @@ import { Component, State, Listen, h } from "@stencil/core";
 })
 export class GetPosts {
   btnPlaces: HTMLInputElement;
-
+  @Prop() config: string;
   @State() searchResults: {
     id: string;
     city: string;
@@ -87,6 +87,7 @@ export class GetPosts {
     }
     return [
       <h4>PLACES COMPONENT</h4>,
+      <p>config: {this.config}</p>,
       <form onSubmit={this.onFindPlaces.bind(this)}>
         <button
           id="placesBtn"
