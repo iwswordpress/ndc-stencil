@@ -1,5 +1,7 @@
 # Stencil Example
 
+github: ndec-stencil
+
 This directory is a brief example of a [Stencil](https://stenciljs.com/) app that can be deployed with Vercel and zero configuration
 
 ## Deploy Your Own
