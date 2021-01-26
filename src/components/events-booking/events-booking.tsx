@@ -73,7 +73,7 @@ export class EventsBooking {
             <br></br>
             <br>
               {this.eventCode} (ID: {this.eventId})
-            </br>{" "}
+            </br>
             which has {this.eventSpaces} attendees already!
           </p>
         </div>
