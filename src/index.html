@@ -46,17 +46,15 @@
         <h3>ndc-stencil.vercel.app</h3>
 
         <p>
-          Once a conference is selected, the conference component emits a Custom
-          Event.
+          Click 'Show Conferences' -> Custom Event fired - all components
+          listen.
         </p>
+        <p>Click a flight and this is logged in Event Bus Component ...</p>
         <p>
-          In this model, the Booking, Flights and Places components listen and
-          respond.
+          Architecture is SYNCHRONISED with Event Bus Component just logging
+          events.
         </p>
-        <p>
-          The Event Bus component listens for all events and logs them. It can
-          be the CONTROLLER but in this example it is not.
-        </p>
+        <p>Other architectures could be used.</p>
       </div>
       <div style="display: flex; justify-content: space-around; gap: 10px">
         <iws-events-finder config="{wc:'event-finder'}"></iws-events-finder>
