@@ -17,6 +17,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface FormEntry {
+    }
     interface IwsEventFlights {
         "config": string;
     }
@@ -59,6 +61,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLFormEntryElement extends Components.FormEntry, HTMLStencilElement {
+    }
+    var HTMLFormEntryElement: {
+        prototype: HTMLFormEntryElement;
+        new (): HTMLFormEntryElement;
+    };
     interface HTMLIwsEventFlightsElement extends Components.IwsEventFlights, HTMLStencilElement {
     }
     var HTMLIwsEventFlightsElement: {
@@ -100,6 +108,7 @@ declare global {
         "app-ndc": HTMLAppNdcElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "form-entry": HTMLFormEntryElement;
         "iws-event-flights": HTMLIwsEventFlightsElement;
         "iws-event-listener": HTMLIwsEventListenerElement;
         "iws-events-booking": HTMLIwsEventsBookingElement;
@@ -118,6 +127,8 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
+    }
+    interface FormEntry {
     }
     interface IwsEventFlights {
         "config"?: string;
@@ -142,6 +153,7 @@ declare namespace LocalJSX {
         "app-ndc": AppNdc;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "form-entry": FormEntry;
         "iws-event-flights": IwsEventFlights;
         "iws-event-listener": IwsEventListener;
         "iws-events-booking": IwsEventsBooking;
@@ -158,6 +170,7 @@ declare module "@stencil/core" {
             "app-ndc": LocalJSX.AppNdc & JSXBase.HTMLAttributes<HTMLAppNdcElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "form-entry": LocalJSX.FormEntry & JSXBase.HTMLAttributes<HTMLFormEntryElement>;
             "iws-event-flights": LocalJSX.IwsEventFlights & JSXBase.HTMLAttributes<HTMLIwsEventFlightsElement>;
             "iws-event-listener": LocalJSX.IwsEventListener & JSXBase.HTMLAttributes<HTMLIwsEventListenerElement>;
             "iws-events-booking": LocalJSX.IwsEventsBooking & JSXBase.HTMLAttributes<HTMLIwsEventsBookingElement>;
