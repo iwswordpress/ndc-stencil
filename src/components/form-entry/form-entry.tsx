@@ -75,7 +75,7 @@ export class FormEntry {
   handleCheckbox(event) {
     console.log("event target", event.target.checked);
     if (event.target.checked) {
-      this.checkboxValue = "HAS_BIKE";
+      this.checkboxValue = "HAS_BIKE ";
     } else {
       this.checkboxValue = "NO_BIKE";
     }
