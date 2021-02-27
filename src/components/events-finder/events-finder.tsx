@@ -30,7 +30,7 @@ export class EventsFinder {
           return {
             city: match.event_city,
             symbol: match.event_code,
-            spaces: match.event_spaces,
+            attendees: match.event_spaces,
             id: match.id,
           };
         });
@@ -66,7 +66,7 @@ export class EventsFinder {
     }
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <h4>CONF COMPONENT</h4>
+        <h4>CONFERENCE COMPONENT</h4>
         <p>config: {this.config}</p>
 
         <input

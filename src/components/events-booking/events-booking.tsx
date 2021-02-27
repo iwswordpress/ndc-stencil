@@ -69,10 +69,11 @@ export class EventsBooking {
           <h2>BOOKINGS COMPONENT</h2>
           <p>Config: {this.config}</p>
           <p>
-            You are booked at{" "}
-            <b>
+            You are booked at:
+            <br></br>
+            <br>
               {this.eventCode} (ID: {this.eventId})
-            </b>{" "}
+            </br>
             which has {this.eventSpaces} attendees already!
           </p>
         </div>

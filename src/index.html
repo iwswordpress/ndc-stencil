@@ -31,11 +31,17 @@
         background: linen;
       }
       .container {
-        max-width: 1000px;
-        border: 10px solid black;
+        max-width: 1200px;
+        border: 5px solid #2196f3;
         border-radius: 10px;
         margin: 0 auto;
         padding: 10px;
+      }
+      #listener {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        margin-top: 20px;
       }
     </style>
   </head>
@@ -44,22 +50,17 @@
     <div class="container">
       <div style="font-size: 18px">
         <h3>ndc-stencil.vercel.app</h3>
-        <p style="color: orange; font-weight: bold; font-size: 12px">
-          DROPBOX PROJECTS 10-FRONT-STENCIL 02_VERCEL NDC STENCIL
-        </p>
-        <p>github: ndec-stencil</p>
+
         <p>
-          Once a conference is selected, the conference component emits a Custom
-          Event.
+          Click 'Show Conferences' -> Custom Event fired - all components
+          listen.
         </p>
+        <p>Click a flight and this is logged in Event Bus Component ...</p>
         <p>
-          In this model, the Booking, Flights and Places components listen and
-          respond.
+          Architecture is SYNCHRONISED with Event Bus Component just logging
+          events.
         </p>
-        <p>
-          The Event Bus component listens for all events and logs them. It can
-          be the CONTROLLER but in this example it is not.
-        </p>
+        <p>Other architectures could be used.</p>
       </div>
       <div style="border:3px solid #ccc; margin:20px; padding:20px;border-radius:10px;">
        <form-entry style="color:red"></form-entry>
@@ -71,16 +72,13 @@
         <iws-wordpress config="{wc:'event-places'}"></iws-wordpress>
       </div>
 
-      <div
-        style="
-          display: flex;
-          justify-content: space-around;
-          gap: 10px;
-          margin-top: 20px;
-        "
-      >
+      <div id="listener">
         <iws-event-listener></iws-event-listener>
       </div>
+      <p>
+        v1.0 06FEB2021 - DEV C:\Users\Owner\Dropbox\COURSES\NDC\50-WEB-COMPONENTS-STENCIL\ndc
+        : github: ndc-stencil
+      </p>
     </div>
   </body>
 </html>
