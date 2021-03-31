@@ -1,6 +1,5 @@
 {
-  "name": "stencil",
-  "private": true,
+  "name": "iwswordpress-ndc",
   "version": "0.0.1",
   "description": "Stencil App Starter",
   "scripts": {
