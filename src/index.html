@@ -38,7 +38,7 @@
 
       #listener {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         gap: 10px;
         margin-top: 20px;
       }
@@ -52,32 +52,33 @@
         <h3>ndc-stencil.vercel.app</h3>
 
         <p>
-          Click 'Show Conferences' -> Custom Event fired - all components
-          listen.
-        </p>
-        <p>Click a flight and this is logged in Event Bus Component ...</p>
-        <p>
-          Architecture is SYNCHRONISED with Event Bus Component just logging
-          events.
-        </p>
-        <p>Other architectures could be used.</p>
+          This is a multi component App. green: Vue, red:Angular, blue:React</p>
       </div>
       <!-- <div style="border:3px solid #ccc; margin:20px; padding:20px;border-radius:10px;">
         <form-entry style="color:red"></form-entry>
       </div> -->
       <div style="display: flex; justify-content: space-around; gap: 10px">
-        <!-- e.g. Angular App -->
+        <!-- e.g Vue App -->
         <iws-events-finder config="{wc:'event-finder'}"></iws-events-finder>
         <!-- e.g. React app -->
         <iws-events-booking config="{wc:'event-booking'}"></iws-events-booking>
-        <!-- e.g Vue App -->
-        <iws-event-flights config="{wc:'event-flights'}"></iws-event-flights>
-        <!-- WP HTML plugin that can have properties set programatically -->
-        <iws-wordpress config="{wc:'event-places'}"></iws-wordpress>
-      </div>
 
+        <iws-event-flights config="{wc:'event-flights'}"></iws-event-flights>
+
+      </div>
+      <div>
+
+      </div>
       <div id="listener">
-        <iws-event-listener></iws-event-listener>
+        <!-- WP HTML plugin that can have properties set programatically -->
+        <div>
+          <iws-wordpress config="{wc:'event-places'}"></iws-wordpress>
+        </div>
+
+        <div>
+          <iws-event-listener></iws-event-listener>
+        </div>
+
       </div>
       <p>
         v1.0 06FEB2021 - DEV C:\Users\Owner\Dropbox\COURSES\NDC\50-WEB-COMPONENTS-STENCIL\ndc

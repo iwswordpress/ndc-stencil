@@ -34,7 +34,8 @@ export class GetPosts {
   onEvent(event: CustomEvent) {
     console.log("-----------------");
     console.log(
-      "[FLIGHTS] Event heard: ",
+      "%c[FLIGHTS] Event heard: ",
+      "color:red;font-size:18px",
       event.type,
       "payload: ",
       event.detail
@@ -109,8 +110,8 @@ export class GetPosts {
       // <form onSubmit={this.handleGetFlights.bind(this)}>
       //   <button type="submit">Want a flight to {this.id}</button>
       // </form>,
+      <div>Angular</div>,
       <h4>FLIGHTS COMPONENT</h4>,
-      <p>config: {this.config}</p>,
       output,
       // <div class="output" innerHTML={this.post}></div>,
     ];

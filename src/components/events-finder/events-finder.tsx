@@ -44,7 +44,11 @@ export class EventsFinder {
   }
 
   onSelectSymbol(payload: string) {
-    console.log("emit: ", payload);
+    console.log(
+      "%cConference Selected: ",
+      "color:green;font-size:18px",
+      payload
+    );
     this.iwsConferenceSelected.emit(payload);
   }
 
@@ -66,8 +70,11 @@ export class EventsFinder {
     }
     return [
       <form onSubmit={this.onFindStocks.bind(this)}>
-        <h4>CONFERENCE COMPONENT</h4>
-        <p>config: {this.config}</p>
+        <div>
+          <div>Vue</div>
+          <h4>CONFERENCE COMPONENT</h4>
+        </div>
+        {/* <p>config: {this.config}</p> */}
 
         <input
           id="stock-symbol"

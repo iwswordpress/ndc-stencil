@@ -16,7 +16,13 @@ export class EventsBooking {
 
   @Listen("iwsConferenceSelected", { target: "body" })
   onStockSymbolSelected(event: CustomEvent) {
-    console.log("[CART] Event heard: ", event.type, "payload: ", event.detail);
+    console.log(
+      "%c[BOOKING] Event heard: ",
+      "color:blue;font-size:18px",
+      event.type,
+      "payload: ",
+      event.detail
+    );
     const json = JSON.parse(event.detail);
     this.eventId = json.id;
     this.fetchEventSpaces();
@@ -57,8 +63,10 @@ export class EventsBooking {
 
   render() {
     let dataContent = [
-      <h4>BOOKING COMPONENT</h4>,
-      <p>config: {this.config}</p>,
+      <div>
+        <div>React</div>
+        <h4>BOOKING COMPONENT</h4>
+      </div>,
     ];
     if (this.error) {
       dataContent = <p>{this.error}</p>;
@@ -66,8 +74,9 @@ export class EventsBooking {
     if (this.eventSpaces) {
       dataContent = (
         <div>
-          <h2>BOOKINGS COMPONENT</h2>
-          <p>Config: {this.config}</p>
+          <div>React</div>
+          <h4>BOOKING COMPONENT</h4>
+          {/* <p>Config: {this.config}</p> */}
           <p>
             You are booked at:
             <br></br>

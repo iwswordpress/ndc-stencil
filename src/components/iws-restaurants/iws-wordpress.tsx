@@ -29,7 +29,8 @@ export class GetPosts {
   getRestaurants(event: CustomEvent) {
     console.log(">>>>>>>>>>>>>");
     console.log(
-      "[RESTAURANTS] Event heard: ",
+      "%c[WORDPRESS] Event heard: ",
+      "color:purple;font-size:24px",
       event.type,
       "payload: ",
       event.detail
@@ -86,8 +87,10 @@ export class GetPosts {
       output = <uc-spinner />;
     }
     return [
+      <div>
+        <h1>WORPRESS</h1>
+      </div>,
       <h4>PLACES COMPONENT</h4>,
-      <p>config: {this.config}</p>,
       <form onSubmit={this.onFindPlaces.bind(this)}>
         <button
           id="placesBtn"
