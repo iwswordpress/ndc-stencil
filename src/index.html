@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
   <head>
     <meta charset="utf-8" />
     <title>Stencil Starter App</title>
-    <meta
-      name="Description"
-      content="Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil!"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
+    <meta name="Description"
+      content="Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#16161d" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
@@ -27,9 +23,11 @@
         --color-primary: red;
         --color-primary-highlight: orange;
       }
+
       body {
         background: linen;
       }
+
       .container {
         max-width: 1200px;
         border: 5px solid #2196f3;
@@ -37,6 +35,7 @@
         margin: 0 auto;
         padding: 10px;
       }
+
       #listener {
         display: flex;
         justify-content: space-around;
@@ -45,6 +44,7 @@
       }
     </style>
   </head>
+
   <body>
     <br />
     <div class="container">
@@ -62,13 +62,17 @@
         </p>
         <p>Other architectures could be used.</p>
       </div>
-      <div style="border:3px solid #ccc; margin:20px; padding:20px;border-radius:10px;">
-       <form-entry style="color:red"></form-entry>
-      </div>
+      <!-- <div style="border:3px solid #ccc; margin:20px; padding:20px;border-radius:10px;">
+        <form-entry style="color:red"></form-entry>
+      </div> -->
       <div style="display: flex; justify-content: space-around; gap: 10px">
+        <!-- e.g. Angular App -->
         <iws-events-finder config="{wc:'event-finder'}"></iws-events-finder>
+        <!-- e.g. React app -->
         <iws-events-booking config="{wc:'event-booking'}"></iws-events-booking>
+        <!-- e.g Vue App -->
         <iws-event-flights config="{wc:'event-flights'}"></iws-event-flights>
+        <!-- WP HTML plugin that can have properties set programatically -->
         <iws-wordpress config="{wc:'event-places'}"></iws-wordpress>
       </div>
 
@@ -81,4 +85,5 @@
       </p>
     </div>
   </body>
+
 </html>
