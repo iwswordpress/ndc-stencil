@@ -23,7 +23,7 @@ export class EventsFinder {
     event.preventDefault();
     this.loading = true;
     // const stockcity = this.stockcityInput.value;
-    fetch(`https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/conferences`)
+    fetch(`https://wp-html.co.uk/api/wp-json/enterprise/v2/conferences`)
       .then((res) => res.json())
       .then((data) => {
         this.searchResults = data.map((match) => {

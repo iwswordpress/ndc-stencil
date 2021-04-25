@@ -31,7 +31,7 @@ export class EventsBooking {
   fetchEventSpaces() {
     this.loading = true;
     //console.log("fetch id: ", this.eventId);
-    const api = `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/get-event?id=${this.eventId}`;
+    const api = `https://wp-html.co.uk/api/wp-json/enterprise/v2/get-event?id=${this.eventId}`;
     //console.log("api: ", api);
     fetch(api)
       .then((res) => {
