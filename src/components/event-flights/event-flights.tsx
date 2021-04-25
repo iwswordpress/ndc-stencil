@@ -50,7 +50,7 @@ export class GetPosts {
     this.loading = true;
     // const stockName = this.stockNameInput.value;
     //const url = `https://49plus.co.uk/udemy-rest/wp-json/wp/v2/posts`;
-    const url = `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/get-flights?code=${this.code}`;
+    const url = `https://wp-html.co.uk/api/wp-json/enterprise/v2/get-flights?code=${this.code}`;
 
     fetch(url)
       .then((res) => res.json())

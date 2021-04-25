@@ -51,8 +51,11 @@ export class GetPosts {
     this.doFetch(this.code);
   }
   doFetch(code: string) {
+    console.log(
+      "https://wp-html.co.uk/api/wp-json/enterprise/v2/places-by-code?code=${code}"
+    );
     fetch(
-      `https://wpjs.co.uk/enterprise/wp-json/enterprise/v2/places-by-code?code=${code}`
+      `https://wp-html.co.uk/api/wp-json/enterprise/v2/places-by-code?code=${code}`
     )
       .then((res) => res.json())
       .then((data) => {
