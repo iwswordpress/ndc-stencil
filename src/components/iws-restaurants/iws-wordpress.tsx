@@ -78,22 +78,22 @@ export class GetPosts {
   }
   render() {
     let output = (
-      <ul>
-        {this.searchResults.map((result) => (
-          <li key={result.id}>
-            <strong>{result.city}</strong> - {result.place} - {result.website}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <p>Information courtesy of exampleWPsite.com</p>
+        <p>Paid service, affiliate or a way to promote one's site.</p>
+        <ul>
+          {this.searchResults.map((result) => (
+            <li key={result.id}>
+              <strong>{result.city}</strong> - {result.place} - {result.website}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
     if (this.loading) {
       output = <uc-spinner />;
     }
     return [
-      <div>
-        <h1>WORPRESS</h1>
-      </div>,
-      <h4>PLACES COMPONENT</h4>,
       <form onSubmit={this.onFindPlaces.bind(this)}>
         <button
           id="placesBtn"

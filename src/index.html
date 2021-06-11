@@ -22,7 +22,10 @@
       html {
         --color-primary: red;
         --color-primary-highlight: orange;
+        /* https://aykevl.nl/2014/09/fix-jumping-scrollbar */
+        margin-left: calc(100vw - 100%);
       }
+
 
       body {
         background: linen;
@@ -48,37 +51,31 @@
   <body>
     <br />
     <div class="container">
-      <div style="font-size: 18px">
-        <h3>ndc-stencil.vercel.app</h3>
-
+      <div style="font-size: 24px">
+        <!-- <h3>ndc-stencil.vercel.app</h3> -->
         <p>
-          This is a multi component App. green: Vue, red:Angular, blue:React</p>
+          This is a multi component App with green: Vue, red:Angular, blue:React
+        </p>
       </div>
-      <!-- <div style="border:3px solid #ccc; margin:20px; padding:20px;border-radius:10px;">
-        <form-entry style="color:red"></form-entry>
-      </div> -->
+
       <div style="display: flex; justify-content: space-around; gap: 10px">
         <!-- e.g Vue App -->
         <iws-events-finder config="{wc:'event-finder'}"></iws-events-finder>
         <!-- e.g. React app -->
         <iws-events-booking config="{wc:'event-booking'}"></iws-events-booking>
-
+        <!-- e.g. Angular app -->
         <iws-event-flights config="{wc:'event-flights'}"></iws-event-flights>
 
       </div>
-      <div>
-
-      </div>
+   
       <div id="listener">
         <!-- WP HTML plugin that can have properties set programatically -->
         <div>
           <iws-wordpress config="{wc:'event-places'}"></iws-wordpress>
         </div>
-
         <div>
           <iws-event-listener></iws-event-listener>
         </div>
-
       </div>
       <p>
         v1.0 06FEB2021 - DEV C:\Users\Owner\Dropbox\COURSES\NDC\50-WEB-COMPONENTS-STENCIL\ndc

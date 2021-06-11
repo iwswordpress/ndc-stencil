@@ -45,9 +45,11 @@ export class EventsBooking {
         if (!data) {
           throw new Error("Invalid symbol!");
         }
-        // console.log("data ", data);
+        console.log("data = ", data);
         this.error = null;
+        this.eventId = data[0].id;
         this.eventSpaces = data[0].event_spaces;
+
         this.eventCode = data[0].event_code;
         this.loading = false;
       })
@@ -78,12 +80,12 @@ export class EventsBooking {
           <h4>BOOKING COMPONENT</h4>
           {/* <p>Config: {this.config}</p> */}
           <p>
-            You are booked at:
-            <br></br>
-            <br>
-              {this.eventCode} (ID: {this.eventId})
-            </br>
-            which has {this.eventSpaces} attendees already!
+            You are booked at:&nbsp;
+            <b>
+              {this.eventId} {this.eventCode}{" "}
+            </b>
+            &nbsp;which has {this.eventSpaces}
+            &nbsp;attendees already!
           </p>
         </div>
       );
