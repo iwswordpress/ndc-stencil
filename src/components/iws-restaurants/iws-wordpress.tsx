@@ -68,7 +68,7 @@ export class GetPosts {
             website: post.website,
           };
         });
-        console.log(this.searchResults);
+
         this.loading = false;
       })
       .catch((err) => {
